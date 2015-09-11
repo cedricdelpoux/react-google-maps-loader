@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: __dirname,
     filename: './lib/index.js',
-    library: 'ReactSvgLineChart',
+    library: 'react-google-maps-loader',
     libraryTarget: 'umd',
   },
   resolve: {
@@ -24,7 +24,7 @@ module.exports = {
       { test: /\.js$/, include: sources, loader: 'babel' },
     ],
   },
-  externals: {
+ externals: {
     react: {
       root: 'React',
       commonjs: 'react',
