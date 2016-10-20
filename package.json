@@ -4,7 +4,7 @@
   "description": "React decorator to use google maps services into your react applications",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/cedricdelpoux/react-google-maps-loader.git"
+    "url": "git+https://github.com/xuopled/react-google-maps-loader.git"
   },
   "keywords": [
     "react",
@@ -17,9 +17,9 @@
   "author": "Cédric Delpoux <cedric.delpoux@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/cedricdelpoux/react-google-maps-loader/issues"
+    "url": "https://github.com/xuopled/react-google-maps-loader/issues"
   },
-  "homepage": "https://github.com/cedricdelpoux/react-google-maps-loader#readme",
+  "homepage": "https://github.com/xuopled/react-google-maps-loader#readme",
   "main": "lib/index.js",
   "files": [
     "lib"
