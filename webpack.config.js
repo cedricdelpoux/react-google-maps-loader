@@ -18,10 +18,24 @@ module.exports = {
   },
   module: {
     preLoaders: [
-      { test: /\.js?$/, include: sources, loader: 'eslint' },
+      {
+        test: /\.js?$/,
+        include: sources,
+        loader: 'eslint',
+        query: {
+          presets: ['latest']
+        },
+      },
     ],
     loaders: [
-      { test: /\.js$/, include: sources, loader: 'babel' },
+      {
+        test: /\.js$/,
+        include: sources,
+        loader: 'babel',
+        query: {
+          presets: ['latest']
+        },
+      },
     ],
   },
  externals: {

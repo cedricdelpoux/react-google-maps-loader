@@ -1,46 +1,64 @@
-/* global google */
+import React, {Component} from "react"
+import load from "little-loader"
+import qs from "query-string"
 
-import React, { Component } from 'react'
-import scriptjs from 'scriptjs'
+const GOOGLE_MAP_PLACES_API = "https://maps.googleapis.com/maps/api/js"
+const NOT_LOADED = 0
+const LOADING = 1
+const LOADED = 2
 
-export default (options = {}) => (TargetComponent) => (
+const queue = []
+let state = NOT_LOADED
+let sdk
+
+function useGoogleMapSdk(params, callback) {
+  if (state === LOADED) {
+    callback(sdk)
+  } else if (state === LOADING) {
+    queue.push(callback)
+  } else if (window.google != null && window.google.maps != null) {
+    state = LOADED
+    sdk = window.google.maps
+    callback(sdk)
+  } else {
+    state = LOADING
+    queue.push(callback)
+
+    load(`${GOOGLE_MAP_PLACES_API}?${qs.stringify(params)}`, (err) => {
+      if (err) {
+        throw new Error("Unable to load Google Map SDK")
+      }
+
+      state = LOADED
+      sdk = window.google.maps
+
+      while (queue.length > 0) {
+        queue.pop()(sdk)
+      }
+    })
+  }
+}
+
+const GoogleMapsLoader = (TargetComponent, params) => (
   class extends Component {
-    state = {
-      googleMaps: null,
-    }
-
-    componentDidMount() {
-      if (typeof window.google === 'undefined') {
-        window.googleMapsLoaded = () => {
-          scriptjs.done('google-maps-places')
-        }
-
-        options.callback = 'googleMapsLoaded'
-
-        const queryString = Object.keys(options).reduce((result, key) => (
-          options[key] !== null && options[key] !== undefined
-            ? (result += key + '=' + options[key] + '&')
-            : result
-        ), '?').slice(0, -1)
-
-        scriptjs('https://maps.googleapis.com/maps/api/js' + queryString)
-        scriptjs.ready('google-maps-places', () => {
-          this.handleLoaded(google.maps)
-        })
-      } else {
-        this.handleLoaded(google.maps)
+    constructor() {
+      super()
+      this.state = {
+        googleMaps: null,
       }
     }
 
-    handleLoaded(googleMaps) {
-      this.setState({ googleMaps })
+    componentWillMount() {
+      useGoogleMapSdk(params, googleMaps => this.setState({googleMaps}))
     }
 
     render() {
-      const { googleMaps } = this.state
+      const {googleMaps} = this.state
       return googleMaps
         ? <TargetComponent googleMaps={googleMaps} {...this.props} />
         : null
     }
   }
 )
+
+export default GoogleMapsLoader

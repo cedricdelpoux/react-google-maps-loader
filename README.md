@@ -1,4 +1,4 @@
-# react-google-maps-loader ![npm](https://img.shields.io/npm/v/react-google-maps-loader.svg) ![license](https://img.shields.io/npm/l/react-google-maps-loader.svg) ![github-issues](https://img.shields.io/github/issues/cedricdelpoux/react-google-maps-loader.svg)
+# react-google-maps-loader ![npm](https://img.shields.io/npm/v/react-google-maps-loader.svg) ![license](https://img.shields.io/npm/l/react-google-maps-loader.svg) ![github-issues](https://img.shields.io/github/issues/xuopled/react-google-maps-loader.svg)
 
 React decorator to use google maps services into your react applications
 
@@ -26,25 +26,34 @@ CONST = GOOGLE_MAPS_API_KEY = 'myapikey' // Change your api key
 
 @googleMapsLoader({ key: GOOGLE_MAPS_API_KEY, libraries: ['places','geometry'] })
 export default class MyComponent extends Component {
-  state = {
-    map: null,
-  }
+    constructor() {
+        super()
+        this.state = {
+            map: null,
+            markers: new Map(),
+        }
+    }
 
-  componentDidMount() {
-    const { googleMaps } = this.props
-    const map = new googleMaps.Map(React.findDOMNode(this.refs.map))
+    componentDidMount() {
+        const {googleMaps} = this.props
+        const map = new googleMaps.Map(this.ref_map)
 
-    this.setState({ map })
-  }
+        this.setState({map})
+    }
 
-  method() {
-    const { googleMaps } = this.props
+    method() {
+        const {googleMaps} = this.props
 
-    return (
-      <div ref="map"></div>
-    )
-  }
+        return (
+          <div ref={ref => this.ref_map = ref} />
+        )
+    }
 }
+
+export default placesLoader(MyComponent, {
+  libraries: ["places", "geometry"],
+  key: GOOGLE_MAPS_API_KEY,
+})
 ```
 
 ## Development
