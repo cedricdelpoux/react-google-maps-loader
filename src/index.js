@@ -12,30 +12,32 @@ let state = NOT_LOADED
 let sdk
 
 function useGoogleMapSdk(params, callback) {
-  if (state === LOADED) {
-    callback(sdk)
-  } else if (state === LOADING) {
-    queue.push(callback)
-  } else if (window.google != null && window.google.maps != null) {
-    state = LOADED
-    sdk = window.google.maps
-    callback(sdk)
-  } else {
-    state = LOADING
-    queue.push(callback)
-
-    load(`${GOOGLE_MAP_PLACES_API}?${qs.stringify(params)}`, (err) => {
-      if (err) {
-        throw new Error("Unable to load Google Map SDK")
-      }
-
+  if (typeof window !== "undefined") {
+    if (state === LOADED) {
+      callback(sdk)
+    } else if (state === LOADING) {
+      queue.push(callback)
+    } else if (window.google != null && window.google.maps != null) {
       state = LOADED
       sdk = window.google.maps
+      callback(sdk)
+    } else {
+      state = LOADING
+      queue.push(callback)
 
-      while (queue.length > 0) {
-        queue.pop()(sdk)
-      }
-    })
+      load(`${GOOGLE_MAP_PLACES_API}?${qs.stringify(params)}`, (err) => {
+        if (err) {
+          throw new Error("Unable to load Google Map SDK")
+        }
+
+        state = LOADED
+        sdk = window.google.maps
+
+        while (queue.length > 0) {
+          queue.pop()(sdk)
+        }
+      })
+    }
   }
 }
 
