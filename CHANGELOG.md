@@ -1,3 +1,6 @@
+# 2.0.2 - 2017-01-04
+* Update : React peer dependency
+
 # 2.0.1 - 2016-11-21
 * Add : Handle non web-browser environments
 
