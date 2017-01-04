@@ -1,6 +1,6 @@
 {
   "name": "react-google-maps-loader",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "React HOC to use google maps services into your react applications",
   "repository": {
     "type": "git",
@@ -28,7 +28,7 @@
     "little-loader": "~0.1.0"
   },
   "peerDependencies": {
-    "react": "~15.3.0"
+    "react": "^15.3.0"
   },
   "devDependencies": {
     "babel-core": "~6.14.0",
