@@ -1,3 +1,6 @@
+# 2.0.2 - 2017-01-04
+* Update : `package.json` upgrade React peer dependency to ^15.3.0 (from ~15.3.0)
+
 # 2.0.1 - 2016-11-21
 * Add : Handle non web-browser environments
 
