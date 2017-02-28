@@ -24,7 +24,6 @@ import googleMapsLoader from 'react-google-maps-loader'
 
 CONST = GOOGLE_MAPS_API_KEY = 'myapikey' // Change your api key
 
-@googleMapsLoader({ key: GOOGLE_MAPS_API_KEY, libraries: ['places','geometry'] })
 export default class MyComponent extends Component {
     constructor() {
         super()
