@@ -56,9 +56,7 @@ const GoogleMapsLoader = (TargetComponent, params) => (
 
     render() {
       const {googleMaps} = this.state
-      return googleMaps
-        ? <TargetComponent googleMaps={googleMaps} {...this.props} />
-        : null
+      return <TargetComponent googleMaps={googleMaps} {...this.props} />
     }
   }
 )
