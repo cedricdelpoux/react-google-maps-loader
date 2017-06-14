@@ -1,3 +1,6 @@
+# 2.0.3 - 2017-06-14
+* Update : Render component even when google maps is not loaded yet
+
 # 2.0.2 - 2017-01-04
 * Update : React peer dependency
 

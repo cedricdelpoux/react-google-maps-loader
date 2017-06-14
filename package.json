@@ -1,6 +1,6 @@
 {
   "name": "react-google-maps-loader",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "React HOC to use google maps services into your react applications",
   "repository": {
     "type": "git",
