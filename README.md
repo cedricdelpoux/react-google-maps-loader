@@ -49,7 +49,7 @@ class MyComponent extends Component {
     }
 }
 
-export default placesLoader(MyComponent, {
+export default googleMapsLoader(MyComponent, {
   libraries: ["places", "geometry"],
   key: GOOGLE_MAPS_API_KEY,
 })
