@@ -1,3 +1,6 @@
+# 3.0.1 - 2017-07-03
+* Update : Documentation
+
 # 3.0.0 - 2017-07-03
 * Update : Deprecate v2.0.3
 

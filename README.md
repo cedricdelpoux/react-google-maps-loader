@@ -1,11 +1,15 @@
 # react-google-maps-loader ![npm](https://img.shields.io/npm/v/react-google-maps-loader.svg) ![license](https://img.shields.io/npm/l/react-google-maps-loader.svg) ![github-issues](https://img.shields.io/github/issues/xuopled/react-google-maps-loader.svg)
 
-React decorator to use google maps services into your react applications
+React HOC to use google maps services into your react applications
 
 ## Install
 
 ```sh
 npm install --save react-google-maps-loader
+
+// OR
+
+yarn add react-google-maps-loader
 ```
 
 ## Changelog
@@ -14,38 +18,48 @@ See [changelog](./CHANGELOG.md)
 
 ## Usage
 
-The `googleMapsLoader` decorator take an options object in parameter.
+The `googleMapsLoader` HOC take an options object in parameter.
 You can specify any parameters Google let you use to load Google Maps API.
 Checkout [Google Maps Javascript API documentation](https://developers.google.com/maps/documentation/javascript/libraries) to specify librairies or others parameters.
 
 ```js
-import React, { Component } from 'react'
-import googleMapsLoader from 'react-google-maps-loader'
+import React, {Component} from "react"
+import googleMapsLoader from "react-google-maps-loader"
 
-CONST = GOOGLE_MAPS_API_KEY = 'myapikey' // Change your api key
+CONST = GOOGLE_MAPS_API_KEY = "myapikey" // Change your api key
 
 class MyComponent extends Component {
     constructor() {
         super()
         this.state = {
             map: null,
-            markers: new Map(),
         }
     }
 
     componentDidMount() {
-        const {googleMaps} = this.props
-        const map = new googleMaps.Map(this.ref_map)
+        if (this.props.googleMaps)
+            this.initMap()
+        }
+    }
 
+    componentDidUpdate(prevProps) {
+        if (!prevProps.googleMaps && this.props.googleMaps)
+            this.initMap()
+        }
+    }
+
+    initMap() {
+        const map = new googleMaps.Map(this.ref_map)
         this.setState({map})
     }
 
-    method() {
+    render() {
         const {googleMaps} = this.props
 
-        return (
-          <div ref={ref => this.ref_map = ref} />
-        )
+        // You should handle the case when Google Maps is not loaded yet
+        return googleMaps
+            ? <div ref={ref => this.ref_map = ref} />
+            : <Spinner /> // You should use a custom loader here
     }
 }
 
