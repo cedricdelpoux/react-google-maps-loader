@@ -1,3 +1,6 @@
+# 3.0.0 - 2017-07-03
+* Update : Deprecate v2.0.3
+
 # 2.0.3 - 2017-06-14
 * Update : Render component even when google maps is not loaded yet
 
