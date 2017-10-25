@@ -1,3 +1,10 @@
+# 4.0.0 - 2017-10-25
+* Update : Tranform Hight Order Component to React Component using a render prop
+* Add : CommonJS build
+* Add : ES6 build
+* Add : UMD build
+* Add : Demo page
+
 # 3.0.1 - 2017-07-03
 * Update : Documentation
 

@@ -1,100 +1,78 @@
-# react-google-maps-loader ![npm](https://img.shields.io/npm/v/react-google-maps-loader.svg) ![license](https://img.shields.io/npm/l/react-google-maps-loader.svg) ![github-issues](https://img.shields.io/github/issues/xuopled/react-google-maps-loader.svg)
+# react-google-maps-loader
 
-React HOC to use google maps services into your react applications
+[![npm package][npm-badge]][npm]
+[![Travis][build-badge]][build]
+[![Codecov][codecov-badge]][codecov]
+![Module formats][module-formats]
 
-## Install
+React Component to use google maps services into your react applications using a render prop.
 
-```sh
-npm install --save react-google-maps-loader
+## Getting started
 
-// OR
+[![react-google-maps-loader](https://nodei.co/npm/react-google-maps-loader.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/react-google-maps-loader/)
 
+You can download `react-google-maps-loader` from the NPM registry via the `npm` or `yarn` commands
+
+```shell
 yarn add react-google-maps-loader
+npm install react-google-maps-loader --save
 ```
+
+If you don't use package manager and you want to include `react-google-maps-loader` directly in your html, you could get it from the UNPKG CDN
+
+```html
+https://unpkg.com/react-google-maps-loader/dist/react-google-maps-loader.min.js.
+```
+
+## Usage
+
+```javascript
+import React from "react"
+import BankCard from "react-google-maps-loader"
+
+const App = () =>
+  <ReactGoogleMapLoader
+    params={{
+        key: YOUR_API_KEY, // Define your api key here
+        libraries: "places,geometry", // To request multiple libraries, separate them with a comma
+    }}
+    render={googleMaps =>
+        googleMaps && (
+            <div>Google Maps is loaded !</div>
+        )}
+    />
+```
+
+## Demo
+
+See [Demo page][github-page]
+
+## Contributing
+
+* ⇄ Pull/Merge requests and ★ Stars are always welcome.
+* For bugs and feature requests, please [create an issue][github-issue].
+* Pull requests must be accompanied by passing automated tests (`npm test`).
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) guidelines
 
 ## Changelog
 
 See [changelog](./CHANGELOG.md)
 
-## Usage
-
-The `googleMapsLoader` HOC take an options object in parameter.
-You can specify any parameters Google let you use to load Google Maps API.
-Checkout [Google Maps Javascript API documentation](https://developers.google.com/maps/documentation/javascript/libraries) to specify librairies or others parameters.
-
-```js
-import React, {Component} from "react"
-import googleMapsLoader from "react-google-maps-loader"
-
-CONST = GOOGLE_MAPS_API_KEY = "myapikey" // Change your api key
-
-class MyComponent extends Component {
-    constructor() {
-        super()
-        this.state = {
-            map: null,
-        }
-    }
-
-    componentDidMount() {
-        if (this.props.googleMaps)
-            this.initMap()
-        }
-    }
-
-    componentDidUpdate(prevProps) {
-        if (!prevProps.googleMaps && this.props.googleMaps)
-            this.initMap()
-        }
-    }
-
-    initMap() {
-        const map = new googleMaps.Map(this.ref_map)
-        this.setState({map})
-    }
-
-    render() {
-        const {googleMaps} = this.props
-
-        // You should handle the case when Google Maps is not loaded yet
-        return googleMaps
-            ? <div ref={ref => this.ref_map = ref} />
-            : <Spinner /> // You should use a custom loader here
-    }
-}
-
-export default googleMapsLoader(MyComponent, {
-  libraries: ["places", "geometry"],
-  key: GOOGLE_MAPS_API_KEY,
-})
-```
-
-## Development
-
-### Clean `lib` folder
-
-```js
-npm run clean
-```
-
-### Build `lib` folder
-
-```js
-npm run build
-```
-
-### Watch `src` folder
-
-```js
-npm run watch
-```
-
-### Lint `src` folder
-
-```js
-npm run lint
-```
-
 ## License
 
-See [MIT](./LICENCE)
+This project is licensed under the MIT License - see the [LICENCE.md](./LICENCE.md) file for details
+
+[npm-badge]: https://img.shields.io/npm/v/react-google-maps-loader.svg?style=flat-square
+[npm]: https://www.npmjs.org/package/react-google-maps-loader
+
+[build-badge]: https://img.shields.io/travis/xuopled/react-google-maps-loader/master.svg?style=flat-square
+[build]: https://travis-ci.org/xuopled/react-google-maps-loader
+
+[codecov-badge]: https://img.shields.io/codecov/c/github/xuopled/react-google-maps-loader.svg?style=flat-square
+[codecov]: https://codecov.io/gh/xuopled/react-google-maps-loader
+
+[module-formats]: https://img.shields.io/badge/module%20formats-umd%2C%20cjs%2C%20esm-green.svg?style=flat-square
+
+[github-page]: https://xuopled.github.io/react-google-maps-loader
+[github-issue]: https://github.com/xuopled/react-google-maps-loader/issues/new

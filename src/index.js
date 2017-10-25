@@ -1,64 +1,35 @@
-import React, {Component} from "react"
-import load from "little-loader"
-import qs from "query-string"
+import React from "react"
+import PropTypes from "prop-types"
 
-const GOOGLE_MAP_PLACES_API = "https://maps.googleapis.com/maps/api/js"
-const NOT_LOADED = 0
-const LOADING = 1
-const LOADED = 2
+import loadGoogleMapsSdk from "./loadGoogleMapsSdk"
 
-const queue = []
-let state = NOT_LOADED
-let sdk
+class GoogleMapsLoader extends React.Component {
+  constructor() {
+    super()
 
-function useGoogleMapSdk(params, callback) {
-  if (typeof window !== "undefined") {
-    if (state === LOADED) {
-      callback(sdk)
-    } else if (state === LOADING) {
-      queue.push(callback)
-    } else if (window.google != null && window.google.maps != null) {
-      state = LOADED
-      sdk = window.google.maps
-      callback(sdk)
-    } else {
-      state = LOADING
-      queue.push(callback)
-
-      load(`${GOOGLE_MAP_PLACES_API}?${qs.stringify(params)}`, (err) => {
-        if (err) {
-          throw new Error("Unable to load Google Map SDK")
-        }
-
-        state = LOADED
-        sdk = window.google.maps
-
-        while (queue.length > 0) {
-          queue.pop()(sdk)
-        }
-      })
+    this.state = {
+      googleMaps: null,
     }
+  }
+
+  componentWillMount() {
+    const {params} = this.props
+    loadGoogleMapsSdk(params, googleMaps => this.setState({googleMaps}))
+  }
+
+  render() {
+    const {googleMaps} = this.state
+    const {render} = this.props
+    return <div>{render(googleMaps)}</div>
   }
 }
 
-const GoogleMapsLoader = (TargetComponent, params) => (
-  class extends Component {
-    constructor() {
-      super()
-      this.state = {
-        googleMaps: null,
-      }
-    }
-
-    componentWillMount() {
-      useGoogleMapSdk(params, googleMaps => this.setState({googleMaps}))
-    }
-
-    render() {
-      const {googleMaps} = this.state
-      return <TargetComponent googleMaps={googleMaps} {...this.props} />
-    }
-  }
-)
+GoogleMapsLoader.propTypes = {
+  params: PropTypes.shape({
+    key: PropTypes.string.isRequired,
+    libraries: PropTypes.string,
+  }).isRequired,
+  render: PropTypes.func.isRequired,
+}
 
 export default GoogleMapsLoader
