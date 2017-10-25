@@ -28,7 +28,7 @@
     "little-loader": "~0.1.0"
   },
   "peerDependencies": {
-    "react": "~0.13.x || ~0.14.x || ^15.0.0"
+    "react": "~0.13.x || ~0.14.x || ^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
     "babel-core": "~6.14.0",
