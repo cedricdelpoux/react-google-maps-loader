@@ -34,8 +34,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-__webpack_require__("./node_modules/prismjs/themes/prism.css");
-
 var header = {
   title: __WEBPACK_IMPORTED_MODULE_4__package_json___default.a.name,
   buttons: [{ label: "Github", url: __WEBPACK_IMPORTED_MODULE_4__package_json___default.a.homepage }, { label: "Npm", url: "https://www.npmjs.com/package/" + __WEBPACK_IMPORTED_MODULE_4__package_json___default.a.name }, { label: "Download", url: __WEBPACK_IMPORTED_MODULE_4__package_json___default.a.homepage + "/archive/master.zip" }]
@@ -83,29 +81,31 @@ Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
 var routes = [{
   path: "/",
   exact: true,
-  component: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-    "div",
-    null,
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { dangerouslySetInnerHTML: { __html: __WEBPACK_IMPORTED_MODULE_3__demo_md___default.a } }),
-    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src__["a" /* default */], {
-      params: {
-        key: "AIzaSyCI3cDduwloUnVSfREo-6wuRYTMjOHcQjc",
-        libraries: "places,geometry"
-      },
-      render: function render(googleMaps) {
-        return googleMaps && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          "div",
-          { style: { height: "300px" } },
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_google_map___default.a, {
-            googleMaps: googleMaps,
-            center: { lat: 43.604363, lng: 1.443363 },
-            zoom: 8
-          })
-        );
-      }
-    })
-  ),
-  label: "Demo"
+  demo: {
+    component: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      "div",
+      null,
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { dangerouslySetInnerHTML: { __html: __WEBPACK_IMPORTED_MODULE_3__demo_md___default.a } }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src__["a" /* default */], {
+        params: {
+          key: "AIzaSyCI3cDduwloUnVSfREo-6wuRYTMjOHcQjc",
+          libraries: "places,geometry"
+        },
+        render: function render(googleMaps) {
+          return googleMaps && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "div",
+            { style: { height: "300px" } },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_google_map___default.a, {
+              googleMaps: googleMaps,
+              center: { lat: 43.604363, lng: 1.443363 },
+              zoom: 8
+            })
+          );
+        }
+      })
+    ),
+    label: "Demo"
+  }
 }, {
   path: "/readme",
   html: __WEBPACK_IMPORTED_MODULE_4__README_md___default.a,
