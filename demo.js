@@ -7,13 +7,6 @@ module.exports = "<h1 id=\"react-google-maps-loader\">react-google-maps-loader</
 
 /***/ }),
 
-/***/ "./demo/src/demo.md":
-/***/ (function(module, exports) {
-
-module.exports = "<h2 id=\"code\">Code</h2>\n<pre><code class=\"lang-javascript\">import ReactGoogleMapLoader from &quot;react-google-maps-loader&quot;\nimport ReactGoogleMap from &quot;react-google-map&quot;\n\nconst YourComponent = () =&gt; \n    &lt;ReactGoogleMapLoader\n        params={{\n            key: &quot;AIzaSyCI3cDduwloUnVSfREo-6wuRYTMjOHcQjc&quot;,\n            libraries: &quot;places,geometry&quot;,\n        }}\n        render={googleMaps =&gt;\n            googleMaps &amp;&amp; (\n              &lt;div style={{height: &quot;300px&quot;}}&gt;\n                &lt;ReactGoogleMap\n                  googleMaps={googleMaps}\n                  center={{lat: 43.604363, lng: 1.443363}}\n                  zoom={8}\n                /&gt;\n              &lt;/div&gt;\n            )}\n    /&gt;\n</code></pre>\n<h2 id=\"demo\">Demo</h2>\n";
-
-/***/ }),
-
 /***/ "./demo/src/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -67,11 +60,8 @@ Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__src__ = __webpack_require__("./src/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_google_map__ = __webpack_require__("./node_modules/react-google-map/lib/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_google_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_react_google_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__demo_md__ = __webpack_require__("./demo/src/demo.md");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__demo_md___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__demo_md__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__README_md__ = __webpack_require__("./README.md");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__README_md___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__README_md__);
-
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__README_md__ = __webpack_require__("./README.md");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__README_md___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__README_md__);
 
 
 
@@ -81,9 +71,10 @@ Object(__WEBPACK_IMPORTED_MODULE_1_react_dom__["render"])(__WEBPACK_IMPORTED_MOD
 var routes = [{
   path: "/",
   exact: true,
-  demo: {
-    html: __WEBPACK_IMPORTED_MODULE_3__demo_md___default.a,
-    component: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src__["a" /* default */], {
+  component: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+    "div",
+    null,
+    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src__["a" /* default */], {
       params: {
         key: "AIzaSyCI3cDduwloUnVSfREo-6wuRYTMjOHcQjc",
         libraries: "places,geometry"
@@ -99,12 +90,12 @@ var routes = [{
           })
         );
       }
-    }),
-    label: "Demo"
-  }
+    })
+  ),
+  label: "Demo"
 }, {
   path: "/readme",
-  html: __WEBPACK_IMPORTED_MODULE_4__README_md___default.a,
+  html: __WEBPACK_IMPORTED_MODULE_3__README_md___default.a,
   label: "Read me"
 }];
 
