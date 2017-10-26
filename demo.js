@@ -82,28 +82,24 @@ var routes = [{
   path: "/",
   exact: true,
   demo: {
-    component: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      "div",
-      null,
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", { dangerouslySetInnerHTML: { __html: __WEBPACK_IMPORTED_MODULE_3__demo_md___default.a } }),
-      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src__["a" /* default */], {
-        params: {
-          key: "AIzaSyCI3cDduwloUnVSfREo-6wuRYTMjOHcQjc",
-          libraries: "places,geometry"
-        },
-        render: function render(googleMaps) {
-          return googleMaps && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            "div",
-            { style: { height: "300px" } },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_google_map___default.a, {
-              googleMaps: googleMaps,
-              center: { lat: 43.604363, lng: 1.443363 },
-              zoom: 8
-            })
-          );
-        }
-      })
-    ),
+    html: __WEBPACK_IMPORTED_MODULE_3__demo_md___default.a,
+    component: __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__src__["a" /* default */], {
+      params: {
+        key: "AIzaSyCI3cDduwloUnVSfREo-6wuRYTMjOHcQjc",
+        libraries: "places,geometry"
+      },
+      render: function render(googleMaps) {
+        return googleMaps && __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "div",
+          { style: { height: "300px" } },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_google_map___default.a, {
+            googleMaps: googleMaps,
+            center: { lat: 43.604363, lng: 1.443363 },
+            zoom: 8
+          })
+        );
+      }
+    }),
     label: "Demo"
   }
 }, {
