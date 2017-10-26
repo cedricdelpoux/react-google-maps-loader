@@ -13,6 +13,7 @@
     "prettier"
   ],
   "globals": {
+    "document": true,
     "window": true
   }
 }
