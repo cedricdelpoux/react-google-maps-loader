@@ -28,7 +28,7 @@ https://unpkg.com/react-google-maps-loader/dist/react-google-maps-loader.min.js.
 
 ```javascript
 import React from "react"
-import BankCard from "react-google-maps-loader"
+import ReactGoogleMapLoader from "react-google-maps-loader"
 
 const App = () =>
   <ReactGoogleMapLoader
