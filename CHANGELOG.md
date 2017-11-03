@@ -1,5 +1,9 @@
+# 4.1.0 - 2017-11-03
+* Removed: Useless wrapper
+
+
 # 4.0.1 - 2017-10-26
-* Addeded: Tests
+* Added: Tests
 
 # 4.0.0 - 2017-10-25
 * Updated: Tranform Hight Order Component to React Component using a render prop

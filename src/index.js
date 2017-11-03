@@ -20,7 +20,7 @@ class GoogleMapsLoader extends React.Component {
   render() {
     const {googleMaps} = this.state
     const {render} = this.props
-    return <div>{render(googleMaps)}</div>
+    return render(googleMaps)
   }
 }
 
