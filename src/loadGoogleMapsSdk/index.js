@@ -8,32 +8,30 @@ const LOADED = 2
 
 const queue = []
 let state = NOT_LOADED
-let sdk
+let googleMaps = null
+let error = null
 
 function loadGoogleMapsSdk(params, callback) {
   if (typeof window !== "undefined") {
+    window.gm_authFailure = () => {
+      callback({googleMaps, error: "SDK Authentication Error"})
+    }
+    window.google = undefined
     if (state === LOADED) {
-      callback(sdk)
+      callback({googleMaps, error})
     } else if (state === LOADING) {
       queue.push(callback)
-    } else if (window.google != null && window.google.maps != null) {
-      state = LOADED
-      sdk = window.google.maps
-      callback(sdk)
     } else {
       state = LOADING
       queue.push(callback)
 
       load(`${GOOGLE_MAP_PLACES_API}?${qs.stringify(params)}`, err => {
-        if (err) {
-          throw new Error("Unable to load Google Map SDK")
-        }
-
         state = LOADED
-        sdk = window.google.maps
+        error = err ? "Network Error" : null
+        googleMaps = window.google ? window.google.maps : null
 
         while (queue.length > 0) {
-          queue.pop()(sdk)
+          queue.pop()({googleMaps, error})
         }
       })
     }
