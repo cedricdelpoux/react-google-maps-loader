@@ -1,6 +1,8 @@
+# 4.2.0 - 2018-03-23
+* Add: Error message and loading state by @joshuaai
+
 # 4.1.0 - 2017-11-03
 * Removed: Useless wrapper
-
 
 # 4.0.1 - 2017-10-26
 * Added: Tests
