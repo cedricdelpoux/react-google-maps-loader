@@ -14,12 +14,10 @@ const routes = [
         <div dangerouslySetInnerHTML={{__html: demoHtml}} />
         <ReactGoogleMapLoader
           params={{
-            //key: "AIzaSyCI3cDduwloUnVSfREo-6wuRYTMjOHcQjc",
-            key: "AIzaSyDVfAMGWXNTAL-TeCybpvndAFxDOZiSew",
+            key: "AIzaSyCI3cDduwloUnVSfREo-6wuRYTMjOHcQjc",
             libraries: "places,geometry",
           }}
           render={(googleMaps, error) =>
-            /*eslint-disable no-console, no-undef */
             googleMaps ? (
               <div style={{height: "300px"}}>
                 {error && error}

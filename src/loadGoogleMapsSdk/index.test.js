@@ -16,7 +16,7 @@ beforeAll(() => {
 
 describe("loadGoogleMapsSdk", () => {
   test("Loads places and geometry libraries", done => {
-    function callback(googleMaps) {
+    function callback({googleMaps}) {
       expect(googleMaps).toEqual(
         expect.objectContaining({
           places: expect.anything(),
@@ -30,7 +30,7 @@ describe("loadGoogleMapsSdk", () => {
   })
 
   test("Returns Google Maps Authntication Error", done => {
-    function callback(googleMaps, error) {
+    function callback({error}) {
       window.setTimeout(() => {
         expect(error).toEqual("SDK Authentication Error")
       }, 1000)
@@ -38,5 +38,16 @@ describe("loadGoogleMapsSdk", () => {
     }
 
     loadGoogleMapsSdk(fakeParams, callback)
+  })
+
+  test("Returns Network Error", done => {
+    function callback({error}) {
+      window.setTimeout(() => {
+        expect(error).toBe("Network Error")
+      }, 1000)
+      done()
+    }
+
+    loadGoogleMapsSdk(null, callback)
   })
 })
