@@ -4,6 +4,11 @@ const params = {
   libraries: "places,geometry",
 }
 
+const fakeParams = {
+  key: "1234555666",
+  libraries: "places,geometry",
+}
+
 beforeAll(() => {
   const script = document.createElement("script")
   document.body.appendChild(script)
@@ -22,5 +27,16 @@ describe("loadGoogleMapsSdk", () => {
     }
 
     loadGoogleMapsSdk(params, callback)
+  })
+
+  test("Returns Google Maps Authntication Error", done => {
+    function callback(googleMaps, error) {
+      window.setTimeout(() => {
+        expect(error).toEqual("SDK Authentication Error")
+      }, 1000)
+      done()
+    }
+
+    loadGoogleMapsSdk(fakeParams, callback)
   })
 })

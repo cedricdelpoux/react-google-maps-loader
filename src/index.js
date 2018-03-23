@@ -9,18 +9,21 @@ class GoogleMapsLoader extends React.Component {
 
     this.state = {
       googleMaps: null,
+      error: null,
     }
   }
 
   componentWillMount() {
     const {params} = this.props
-    loadGoogleMapsSdk(params, googleMaps => this.setState({googleMaps}))
+    loadGoogleMapsSdk(params, (googleMaps, error) =>
+      this.setState({googleMaps, error})
+    )
   }
 
   render() {
-    const {googleMaps} = this.state
+    const {googleMaps, error} = this.state
     const {render} = this.props
-    return render(googleMaps)
+    return render(googleMaps, error)
   }
 }
 

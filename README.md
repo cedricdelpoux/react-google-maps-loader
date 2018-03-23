@@ -26,6 +26,10 @@ https://unpkg.com/react-google-maps-loader/dist/react-google-maps-loader.min.js.
 
 ## Usage
 
+### Load Map Only
+
+This renders when the map is ready, with no loading state.
+
 ```javascript
 import React from "react"
 import ReactGoogleMapLoader from "react-google-maps-loader"
@@ -42,6 +46,49 @@ const App = () =>
         )}
     />
 ```
+
+### Show Loading State
+
+You can show a custom loading state while the user is still online by using the error values.
+
+#### Error Values
+
+* `[String] Network Error` - if the user us offline.
+
+* `[String] SDK Authentication Error` - if there is a problem loading Google maps due to incorrect keys, going over quota or one of the errors listed in the [Error Messages Documentation](https://developers.google.com/maps/documentation/javascript/error-messages).
+
+* `undefined` - map loaded correctly.
+
+```js
+import React from "react"
+import ReactGoogleMapLoader from "react-google-maps-loader"
+
+const App = () =>
+  <ReactGoogleMapLoader
+    params={{
+        key: YOUR_API_KEY, // Define your api key here
+        libraries: "places,geometry", // To request multiple libraries, separate them with a comma
+    }}
+    render={(googleMaps, error) =>
+        googleMaps ? (
+            <div>
+                {/*Show a custom error if SDK Authentication Error. See N/B 2 below.*/}
+                {error ? error : "Google Maps is loaded !"}
+            </div>
+        )   :   (
+            <div>
+                {/*Check for network error so loading state ends if user lost connection.*/}
+                {error === "Network Error" ? <p>{error}</p> : <p>isLoading...</p>}
+            </div>
+        )
+    }/>
+```
+
+N/B:
+
+1. The Google Maps API does not provide errors in the callback but logs them to the console. We grouped all Google Maps errors not related to network connectivity as `SDK Authentication Error`. Check the console if you get this.
+
+2. `googleMaps` always loads as long as there is no `Network Error` and the previous state is not cached. So, handle `SDK Authentication Errors` (See 1. above) in the `googleMaps` part of the conditional rendering as shown in the code above.
 
 ## Demo
 

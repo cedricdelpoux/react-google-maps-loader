@@ -14,17 +14,28 @@ const routes = [
         <div dangerouslySetInnerHTML={{__html: demoHtml}} />
         <ReactGoogleMapLoader
           params={{
-            key: "AIzaSyCI3cDduwloUnVSfREo-6wuRYTMjOHcQjc",
+            //key: "AIzaSyCI3cDduwloUnVSfREo-6wuRYTMjOHcQjc",
+            key: "AIzaSyDVfAMGWXNTAL-TeCybpvndAFxDOZiSew",
             libraries: "places,geometry",
           }}
-          render={googleMaps =>
-            googleMaps && (
+          render={(googleMaps, error) =>
+            /*eslint-disable no-console, no-undef */
+            googleMaps ? (
               <div style={{height: "300px"}}>
+                {error && error}
                 <ReactGoogleMap
                   googleMaps={googleMaps}
                   center={{lat: 43.604363, lng: 1.443363}}
                   zoom={8}
                 />
+              </div>
+            ) : (
+              <div>
+                {error === "Network Error" ? (
+                  <p>{error}</p>
+                ) : (
+                  <p>isLoading...</p>
+                )}
               </div>
             )}
         />

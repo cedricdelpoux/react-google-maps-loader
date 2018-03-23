@@ -10,7 +10,7 @@
 
 ## Demo Development Server
 
-- `yarn start` will run a development server with the component's demo app at [http://localhost:3000](http://localhost:3000) with hot module reloading.
+- `yarn start` will run a development server with the component's demo app at [http://localhost:1190](http://localhost:1190) with hot module reloading.
 
 ## Linting
 
