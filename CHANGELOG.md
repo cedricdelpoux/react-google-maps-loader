@@ -1,3 +1,7 @@
+# 4.2.2 - 2018-04-10
+
+*   Fixed: Tests
+
 # 4.2.1 - 2018-04-10
 
 *   Updated: Load GoogleMapsSdk in componentDidMount instead of componentWillMount
