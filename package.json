@@ -1,6 +1,6 @@
 {
   "name": "react-google-maps-loader",
-  "version": "4.2.0",
+  "version": "4.2.1",
   "author": {
     "name": "Cédric Delpoux",
     "email": "xuopled@gmail.com"
@@ -57,14 +57,14 @@
     "markdown-loader": "^2.0.1",
     "nwb": "^0.18.0",
     "prettier": "^1.5.3",
-    "react": "^15.6.1",
+    "react": "^16.3.0",
     "react-demo-page": "^0.2.2",
-    "react-dom": "^15.6.1",
+    "react-dom": "^16.3.0",
     "react-google-map": "^3.1.0",
     "react-test-renderer": "^15.6.1"
   },
   "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "react": "^15.0.0 || ^16.0.0",
+    "react-dom": "^15.0.0 || ^16.0.0"
   }
 }
