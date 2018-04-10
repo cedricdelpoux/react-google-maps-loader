@@ -57,9 +57,9 @@
     "markdown-loader": "^2.0.1",
     "nwb": "^0.18.0",
     "prettier": "^1.5.3",
-    "react": "^16.3.0",
+    "react": "^15.6.0",
     "react-demo-page": "^0.2.2",
-    "react-dom": "^16.3.0",
+    "react-dom": "^15.6.0",
     "react-google-map": "^3.1.0",
     "react-test-renderer": "^15.6.1"
   },
