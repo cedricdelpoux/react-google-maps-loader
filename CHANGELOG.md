@@ -1,3 +1,7 @@
+# 4.2.3 - 2018-04-10
+
+*   Updated: Move window.google initialisation
+
 # 4.2.2 - 2018-04-10
 
 *   Fixed: Tests

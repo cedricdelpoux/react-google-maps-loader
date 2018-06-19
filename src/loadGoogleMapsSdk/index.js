@@ -16,12 +16,16 @@ function loadGoogleMapsSdk(params, callback) {
     window.gm_authFailure = () => {
       callback({googleMaps, error: "SDK Authentication Error"})
     }
-    window.google = undefined
+
     if (state === LOADED) {
       callback({googleMaps, error})
     } else if (state === LOADING) {
       queue.push(callback)
     } else {
+      if (!window.google) {
+        window.google = undefined
+      }
+
       state = LOADING
       queue.push(callback)
 
