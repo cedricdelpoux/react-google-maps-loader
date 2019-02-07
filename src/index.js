@@ -7,6 +7,7 @@ class GoogleMapsLoader extends React.Component {
   constructor() {
     super()
 
+    this._isMounted = false
     this.state = {
       googleMaps: null,
       error: null,
@@ -14,10 +15,17 @@ class GoogleMapsLoader extends React.Component {
   }
 
   componentDidMount() {
+    this._isMounted = true
     const {params} = this.props
-    loadGoogleMapsSdk(params, ({googleMaps, error}) =>
-      this.setState({googleMaps, error})
+    loadGoogleMapsSdk(
+      params,
+      ({googleMaps, error}) =>
+        this._isMounted && this.setState({googleMaps, error})
     )
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false
   }
 
   render() {
