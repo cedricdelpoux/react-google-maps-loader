@@ -1,15 +1,26 @@
 {
   "name": "react-google-maps-loader",
-  "version": "4.2.3",
+  "version": "4.2.4",
   "author": {
     "name": "Cédric Delpoux",
     "email": "xuopled@gmail.com"
   },
-  "description":
-    "React component to use google maps services into your react applications using a render prop",
-  "files": ["css", "es", "lib", "umd"],
+  "description": "React component to use google maps services into your react applications using a render prop",
+  "files": [
+    "css",
+    "es",
+    "lib",
+    "umd"
+  ],
   "homepage": "https://github.com/xuopled/react-google-maps-loader#readme",
-  "keywords": ["react", "google", "maps", "googlemaps", "loader", "decorator"],
+  "keywords": [
+    "react",
+    "google",
+    "maps",
+    "googlemaps",
+    "loader",
+    "decorator"
+  ],
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -30,6 +41,7 @@
     "test:watch": "yarn test -- --watch"
   },
   "dependencies": {
+    "fsevents": "^1.2.7",
     "little-loader": "~0.1.0",
     "prop-types": "^15.6.1",
     "query-string": "^5.0.1",

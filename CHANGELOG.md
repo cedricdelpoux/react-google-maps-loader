@@ -1,3 +1,7 @@
+# 4.2.4 - 2019-02-07
+
+*   Fixed: Remove warning
+
 # 4.2.3 - 2018-04-10
 
 *   Updated: Move window.google initialisation
