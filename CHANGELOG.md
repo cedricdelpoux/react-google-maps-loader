@@ -1,3 +1,7 @@
+# 4.2.5 - 2019-02-12
+
+*   Updated: Update dependencies
+
 # 4.2.4 - 2019-02-07
 
 *   Fixed: Remove warning
