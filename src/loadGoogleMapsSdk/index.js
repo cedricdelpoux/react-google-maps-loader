@@ -46,6 +46,9 @@ function loadGoogleMapsSdk(params, callback) {
           if (err) {
             error = err ? "Network Error" : null
             state = LOADED
+            while (queue.length > 0) {
+              queue.pop()({googleMaps, error})
+            }
           }
         }
       )
