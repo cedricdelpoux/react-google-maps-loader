@@ -11,7 +11,8 @@ let state = NOT_LOADED
 let googleMaps = null
 let error = null
 
-function loadGoogleMapsSdk(params, callback) {
+// NOTE: the third argument is a testing utility.
+function loadGoogleMapsSdk(params, callback, baseUrl = GOOGLE_MAP_PLACES_API) {
   if (typeof window !== "undefined") {
     window.gm_authFailure = () => {
       callback({googleMaps, error: "SDK Authentication Error"})
@@ -38,7 +39,7 @@ function loadGoogleMapsSdk(params, callback) {
       queue.push(callback)
 
       load(
-        `${GOOGLE_MAP_PLACES_API}?${qs.stringify({
+        `${baseUrl}?${qs.stringify({
           callback: "onGoogleMapsLoad",
           ...params,
         })}`,
