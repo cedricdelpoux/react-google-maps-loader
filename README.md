@@ -24,6 +24,10 @@ If you don't use package manager and you want to include `react-google-maps-load
 https://unpkg.com/react-google-maps-loader/dist/react-google-maps-loader.min.js.
 ```
 
+
+You can also try the component's editable demo hands-on and install it from [bit.dev](https://bit.dev/xuopled/react-google-maps-loader/react-google-maps-loader?example=5d592e9f500b4e00146cca67).
+
+
 ## Usage
 
 ### Load Map Only
