@@ -1,4 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Fira+Mono);/**
+@import url(http://fonts.googleapis.com/css?family=Fira+Mono);
+/**
  * prism.js Coy theme for JavaScript, CoffeeScript, CSS and HTML
  * Based on https://github.com/tshedor/workshop-wp-theme (Example: http://workshop.kansan.com/category/sessions/basics or http://workshop.timshedor.com/category/sessions/basics);
  * @author Tim  Shedor
@@ -223,6 +224,7 @@ pre[data-line] code {
 pre .line-highlight {
 	margin-top: 0;
 }
+
 /**
  * prism.js Dark theme for JavaScript, CSS and HTML
  * Based on the slides of the talk “/Reg(exp){2}lained/”
@@ -352,6 +354,7 @@ pre[class*="language-"] {
 .token.deleted {
 	color: red;
 }
+
 /**
  * prism.js Funky theme
  * Based on “Polyfilling the gaps” talk slides http://lea.verou.me/polyfilling-the-gaps/
@@ -469,6 +472,7 @@ code[class*="language-"] {
 .token.deleted {
 	color: red;
 }
+
 /**
  * okaidia theme for JavaScript, CSS and HTML
  * Loosely based on Monokai textmate theme by http://www.monokai.nl/
@@ -589,6 +593,7 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
+
 /*
  Solarized Color Schemes originally by Ethan Schoonover
  http://ethanschoonover.com/solarized
@@ -735,7 +740,8 @@ pre[class*="language-"] {
 
 .token.entity {
 	cursor: help;
-}/**
+}
+/**
  * prism.js tomorrow night eighties for JavaScript, CoffeeScript, CSS and HTML
  * Based on https://github.com/chriskempson/tomorrow-theme
  * @author Rose Pritchard
@@ -855,6 +861,7 @@ pre[class*="language-"] {
 .token.inserted {
 	color: green;
 }
+
 /**
  * prism.js Twilight theme
  * Based (more or less) on the Twilight theme originally of Textmate fame.
@@ -1058,6 +1065,7 @@ pre[data-line] {
 	content: attr(data-end);
 	top: auto;
 }
+
 /**
  * atom-dark theme for `prism.js`
  * Based on Atom's `atom-dark` theme: https://github.com/atom/atom-dark-syntax
@@ -1203,6 +1211,7 @@ pre[class*="language-"] {
 .token.entity {
 	cursor: help;
 }
+
 /*
 
 Name:       Base16 Atelier Sulphurpool Light
@@ -1376,6 +1385,7 @@ pre > code.highlight {
   background: -o-linear-gradient(left, rgba(107, 115, 148, 0.2) 70%, rgba(107, 115, 148, 0));
   background: linear-gradient(to right, rgba(107, 115, 148, 0.2) 70%, rgba(107, 115, 148, 0));
 }
+
 /*
  * Based on Plugin: Syntax Highlighter CB 
  * Plugin URI: http://wp.tutsplus.com/tutorials/plugins/adding-a-syntax-highlighter-shortcode-using-prism-js
@@ -1545,6 +1555,7 @@ pre[data-line] {
     padding-right: 10px;
     border-right: 3px #d9d336 solid;
 }
+
 /*
 Name: Duotone Dark
 Author: Simurai, adapted from DuoTone themes for Atom (http://simurai.com/projects/2016/01/01/duotone-themes)
@@ -1714,6 +1725,7 @@ pre > code.highlight {
   background: -o-linear-gradient(left, rgba(224, 145, 66, 0.2) 70%, rgba(224, 145, 66, 0));
   background: linear-gradient(to right, rgba(224, 145, 66, 0.2) 70%, rgba(224, 145, 66, 0));
 }
+
 /*
 Name:   Duotone Earth
 Author: Simurai, adapted from DuoTone themes for Atom (http://simurai.com/projects/2016/01/01/duotone-themes)
@@ -1883,6 +1895,7 @@ pre > code.highlight {
   background: -o-linear-gradient(left, rgba(191, 160, 90, 0.2) 70%, rgba(191, 160, 90, 0));
   background: linear-gradient(to right, rgba(191, 160, 90, 0.2) 70%, rgba(191, 160, 90, 0));
 }
+
 /*
 Name:   Duotone Forest
 Author: by Simurai, adapted from DuoTone themes for Atom (http://simurai.com/projects/2016/01/01/duotone-themes)
@@ -2052,6 +2065,7 @@ pre > code.highlight {
   background: -o-linear-gradient(left, rgba(162, 179, 77, 0.2) 70%, rgba(162, 179, 77, 0));
   background: linear-gradient(to right, rgba(162, 179, 77, 0.2) 70%, rgba(162, 179, 77, 0));
 }
+
 /*
 Name:   Duotone Light
 Author: Simurai, adapted from DuoTone themes for Atom (http://simurai.com/projects/2016/01/01/duotone-themes)
@@ -2221,6 +2235,7 @@ pre > code.highlight {
   background: -o-linear-gradient(left, rgba(45, 32, 6, 0.2) 70%, rgba(45, 32, 6, 0));
   background: linear-gradient(to right, rgba(45, 32, 6, 0.2) 70%, rgba(45, 32, 6, 0));
 }
+
 /*
 Name: Duotone Sea
 Author: by Simurai, adapted from DuoTone themes by Simurai for Atom (http://simurai.com/projects/2016/01/01/duotone-themes)
@@ -2390,6 +2405,7 @@ pre > code.highlight {
   background: -o-linear-gradient(left, rgba(10, 163, 112, 0.2) 70%, rgba(10, 163, 112, 0));
   background: linear-gradient(to right, rgba(10, 163, 112, 0.2) 70%, rgba(10, 163, 112, 0));
 }
+
 /*
 Name: Duotone Space
 Author: Simurai, adapted from DuoTone themes for Atom (http://simurai.com/projects/2016/01/01/duotone-themes)
@@ -2559,6 +2575,7 @@ pre > code.highlight {
   background: -o-linear-gradient(left, rgba(221, 103, 44, 0.2) 70%, rgba(221, 103, 44, 0));
   background: linear-gradient(to right, rgba(221, 103, 44, 0.2) 70%, rgba(221, 103, 44, 0));
 }
+
 /**
  * GHColors theme by Avi Aryan (http://aviaryan.in)
  * Inspired by Github syntax coloring
@@ -2676,7 +2693,8 @@ pre[class*="language-"] {
 
 .token.italic {
     font-style: italic;
-}/*
+}
+/*
  * Hopscotch
  * by Jan T. Sott
  * https://github.com/idleberg/Hopscotch
@@ -2797,6 +2815,7 @@ pre > code.highlight {
   outline: .4em solid red;
   outline-offset: .4em;
 } 
+
 
 /*
  * Pojoaque Style by Jason Tate
@@ -2931,6 +2950,7 @@ pre[class*="language-"] {
     color: #181914;
 }
 */
+
 /**
  * VS theme by Andrew Lock (https://andrewlock.net)
  * Inspired by Visual Studio syntax coloring
@@ -3068,7 +3088,8 @@ code[class*="language-css"] {
     background: #ffff00;
     color: #393A34;
 }
-    /**
+    
+/**
 * xonokai theme for JavaScript, CSS and HTML
 * based on: https://github.com/MoOx/sass-prism-theme-base by Maxime Thirouin ~ MoOx --> http://moox.fr/ , which is Loosely based on Monokai textmate theme by http://www.monokai.nl/
 * license: MIT; http://moox.mit-license.org/
@@ -3232,7 +3253,8 @@ pre[data-line] .line-highlight[data-end]:after {
     content: attr(data-end);
     top: auto;
     bottom: .4em;
-}/**
+}
+/**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
  * @author Lea Verou
@@ -3369,4 +3391,5 @@ pre[class*="language-"] {
 	cursor: help;
 }
 
-/*# sourceMappingURL=demo.css.map*/
+
+/*# sourceMappingURL=demo.37202a3e.css.map*/
