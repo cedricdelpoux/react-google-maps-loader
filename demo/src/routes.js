@@ -1,9 +1,8 @@
 import React from "react"
-import ReactGoogleMapLoader from "../../src"
 import ReactGoogleMap from "react-google-map"
-
-import demoHtml from "./demo.md"
 import readmeHtml from "../../README.md"
+import ReactGoogleMapLoader from "../../src"
+import demoHtml from "./demo.md"
 
 const routes = [
   {
@@ -14,7 +13,7 @@ const routes = [
         <div dangerouslySetInnerHTML={{__html: demoHtml}} />
         <ReactGoogleMapLoader
           params={{
-            key: "AIzaSyCI3cDduwloUnVSfREo-6wuRYTMjOHcQjc",
+            key: "AIzaSyCLTirc_kwH5fV0RkzOIH_cP5J9SJHW2QA",
             libraries: "places,geometry",
           }}
           render={(googleMaps, error) =>
@@ -35,7 +34,8 @@ const routes = [
                   <p>isLoading...</p>
                 )}
               </div>
-            )}
+            )
+          }
         />
       </div>
     ),

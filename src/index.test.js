@@ -4,7 +4,7 @@ import GoogleMapsLoader from "./index"
 
 const html = "Loaded"
 const params = {
-  key: "AIzaSyCI3cDduwloUnVSfREo-6wuRYTMjOHcQjc",
+  key: "AIzaSyCLTirc_kwH5fV0RkzOIH_cP5J9SJHW2QA",
 }
 
 const GoogleMapsLoaderFixture = (

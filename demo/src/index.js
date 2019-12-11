@@ -1,9 +1,8 @@
 import React from "react"
-import {render} from "react-dom"
-
 import ReactDemoPage from "react-demo-page"
-import routes from "./routes"
+import {render} from "react-dom"
 import pkg from "../../package.json"
+import routes from "./routes"
 
 const header = {
   title: pkg.name,

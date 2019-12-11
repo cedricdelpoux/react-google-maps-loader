@@ -8044,12 +8044,13 @@ react-deep-force-update@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/react-deep-force-update/-/react-deep-force-update-1.1.1.tgz#bcd31478027b64b3339f108921ab520b4313dc2c"
 
-react-demo-page@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/react-demo-page/-/react-demo-page-0.2.2.tgz#56cdc2f4a79f4b750489ee7e827f8adbf9b89d14"
+react-demo-page@^0.3.5:
+  version "0.3.5"
+  resolved "https://registry.yarnpkg.com/react-demo-page/-/react-demo-page-0.3.5.tgz#209e4f3fd938cb350a26642d7c9e98213fa8eee6"
+  integrity sha512-bjjSmVFGhth0ZdT4OWKubnSxKkPHdQTZUpGuHS7Yilrj/28GMEAMu8e0HFVFL7vvTw34P4/MOYC1ZQOMIbnkoA==
   dependencies:
     prop-types "^15.5.0"
-    react-interactive-component "^0.1.0"
+    react-interactive-component "^0.1.3"
     react-router-dom "^4.1.2"
     styled-components "^2.1.2"
 
@@ -8078,9 +8079,10 @@ react-google-map@^3.1.0:
   dependencies:
     prop-types "^15.6.0"
 
-react-interactive-component@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/react-interactive-component/-/react-interactive-component-0.1.0.tgz#4e01ebf38bcd8c05709e533a3559fc37fdfd0355"
+react-interactive-component@^0.1.3:
+  version "0.1.4"
+  resolved "https://registry.yarnpkg.com/react-interactive-component/-/react-interactive-component-0.1.4.tgz#780d74f3f2aa96f782a523def99e4eced06943db"
+  integrity sha512-lHqTkY0QioR81XthcmMsNbJGYDkpTq0ZWProbsqI6QSZkDlWDus0DQSWqvtpKj8LU+ciqD5sa2L/gJHMhW0ScA==
   dependencies:
     prism-themes "^1.0.0"
     prismjs "^1.6.0"
