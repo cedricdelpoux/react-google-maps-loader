@@ -15,5 +15,10 @@
   "globals": {
     "document": true,
     "window": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }

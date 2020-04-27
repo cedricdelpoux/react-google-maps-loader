@@ -21,15 +21,15 @@ function loadGoogleMapsSdk(params, callback) {
       callback({googleMaps, error})
     } else if (state === LOADING) {
       queue.push(callback)
+    } else if (window.google && window.google.maps) {
+      state = LOADED
+      googleMaps = window.google.maps
+      callback({googleMaps, error})
     } else {
-      if (!window.google) {
-        window.google = undefined
-      }
-
       state = LOADING
       queue.push(callback)
 
-      load(`${GOOGLE_MAP_PLACES_API}?${qs.stringify(params)}`, err => {
+      load(`${GOOGLE_MAP_PLACES_API}?${qs.stringify(params)}`, (err) => {
         state = LOADED
         error = err ? "Network Error" : null
         googleMaps = window.google ? window.google.maps : null

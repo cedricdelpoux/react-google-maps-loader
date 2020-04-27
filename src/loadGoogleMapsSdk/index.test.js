@@ -1,4 +1,5 @@
 import loadGoogleMapsSdk from "./index"
+
 const params = {
   key: "AIzaSyCLTirc_kwH5fV0RkzOIH_cP5J9SJHW2QA",
   libraries: "places,geometry",
@@ -15,7 +16,7 @@ beforeAll(() => {
 })
 
 describe("loadGoogleMapsSdk", () => {
-  test("Loads places and geometry libraries", done => {
+  test("Loads places and geometry libraries", (done) => {
     function callback({googleMaps}) {
       expect(googleMaps).toEqual(
         expect.objectContaining({
@@ -29,7 +30,7 @@ describe("loadGoogleMapsSdk", () => {
     loadGoogleMapsSdk(params, callback)
   })
 
-  test("Returns Google Maps Authntication Error", done => {
+  test("Returns Google Maps Authntication Error", (done) => {
     function callback({error}) {
       window.setTimeout(() => {
         expect(error).toEqual("SDK Authentication Error")
@@ -40,8 +41,9 @@ describe("loadGoogleMapsSdk", () => {
     loadGoogleMapsSdk(fakeParams, callback)
   })
 
-  test("Returns Network Error", done => {
+  test("Returns Network Error", (done) => {
     function callback({error}) {
+      console.log("callback")
       window.setTimeout(() => {
         expect(error).toBe("Network Error")
       }, 1000)
