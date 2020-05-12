@@ -3,7 +3,7 @@
   "version": "4.3.0",
   "author": {
     "name": "Cédric Delpoux",
-    "email": "cedricdelpoux@gmail.com"
+    "email": "cedric.delpoux@gmail.com"
   },
   "description": "React component to use google maps services into your react applications using a render prop",
   "files": [
